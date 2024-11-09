@@ -1,29 +1,90 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="destradaS6A.Views.vEstudiante"
-             Title="vEstudiante">
+             x:Class="destradaS6A.Views.vEstudiante">
     <VerticalStackLayout>
         <Label 
             Text="Semana 6 Servicios Web"
+            TextColor="Purple"
+            FontAttributes="Bold"
             VerticalOptions="Center" 
-            HorizontalOptions="Center" />
+            HorizontalOptions="Center"
+            FontSize="25"/>
 
-            <ListView x:Name="lvEstudiantes">
+        <Grid Padding="10">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+
+            <Label Text="Código" FontAttributes="Bold" 
+                   Grid.Row="0" 
+                   Grid.Column="0" 
+                   HorizontalOptions="Center" />
+            <Label Text="Nombre" FontAttributes="Bold" 
+                   Grid.Row="0" 
+                   Grid.Column="1" 
+                   HorizontalOptions="Center" />
+            <Label Text="Apellido" FontAttributes="Bold" 
+                   Grid.Row="0" 
+                   Grid.Column="2" 
+                   HorizontalOptions="Center" />
+            <Label Text="Edad" FontAttributes="Bold" 
+                   Grid.Row="0" 
+                   Grid.Column="3" 
+                   HorizontalOptions="Center" />
+        </Grid>
+
+        <ListView x:Name="lvEstudiantes" ItemSelected="lvEstudiantes_ItemSelected">
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>
-                        <StackLayout>//aqui los grid-2 gris una para la cabecera y otra para los datos
-                            <Label x:Name="lblNombre" 
-                                       Text="{Binding nombre}"/>
-                                <Label x:Name="lblApellido" 
-                                       Text="{Binding apellido}"/>
-                            </StackLayout>
-                        </ViewCell>
+                        <Grid Padding="10">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto" />
+                            </Grid.RowDefinitions>
+
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="*" />
+                            </Grid.ColumnDefinitions>
+
+                            <Label Text="{Binding codigo}" 
+                                   Grid.Row="0" 
+                                   Grid.Column="0" 
+                                   HorizontalOptions="Center" />
+                            <Label Text="{Binding nombre}" 
+                                   Grid.Row="0" 
+                                   Grid.Column="1" 
+                                   HorizontalOptions="Center" />
+                            <Label Text="{Binding apellido}" 
+                                   Grid.Row="0" 
+                                   Grid.Column="2" 
+                                   HorizontalOptions="Center" />
+                            <Label Text="{Binding edad}" 
+                                   Grid.Row="0"
+                                   Grid.Column="3" 
+                                   HorizontalOptions="Center" />
+                        </Grid>
+                    </ViewCell>
                     </DataTemplate>
                 </ListView.ItemTemplate>
-
             </ListView>
+        <Button x:Name="btnInsertar"
+                Text="Insertar"
+                Clicked="btnInsertar_Clicked"/>
+        
 
     </VerticalStackLayout>
 </ContentPage>
