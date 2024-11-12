@@ -1,5 +1,4 @@
 using destradaS6A.Models;
-using System.Net;
 using System.Text;
 using System.Text.Json;
 
@@ -7,7 +6,7 @@ namespace destradaS6A.Views;
 
 public partial class vActElim : ContentPage
 {
-	public vActElim( Estudiante datos)
+    public vActElim( Estudiante datos)
 	{
 		InitializeComponent();
         txtCodigo.Text = datos.codigo.ToString();
@@ -21,7 +20,7 @@ public partial class vActElim : ContentPage
         {
             using (var client = new HttpClient())
             {
-                string url = $"http://192.168.17.11/uisraelws/estudiante.php?codigo={txtCodigo.Text}";
+                string url = $"http://192.168.100.226/uisraelws/estudiante.php?codigo={txtCodigo.Text}";
 
                 var student = new
                 {
@@ -32,8 +31,7 @@ public partial class vActElim : ContentPage
                 };
 
                 string jsonData = JsonSerializer.Serialize(student);
-                var content = new StringContent(jsonData, Encoding.UTF8, "application/json");
-
+                var content = new StringContent(jsonData, Encoding.UTF8, "application/json"); 
                 HttpResponseMessage response = await client.PutAsync(url, content);
 
                 if (response.IsSuccessStatusCode)
@@ -58,7 +56,7 @@ public partial class vActElim : ContentPage
         { 
             using (var client = new HttpClient())
             {
-                string url = $"http://192.168.17.11/uisraelws/estudiante.php?codigo={txtCodigo.Text}";
+                string url = $"http://192.168.100.226/uisraelws/estudiante.php?codigo={txtCodigo.Text}";
 
                 HttpResponseMessage response = await client.DeleteAsync(url);
 

@@ -13,35 +13,34 @@
 
         <Grid Padding="10">
             <Grid.RowDefinitions>
-                <RowDefinition Height="Auto" />
-                <RowDefinition Height="Auto" />
-                <RowDefinition Height="Auto" />
-                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
             </Grid.RowDefinitions>
-
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="*" />
-                <ColumnDefinition Width="*" />
-                <ColumnDefinition Width="*" />
-                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
 
             <Label Text="Código" FontAttributes="Bold" 
                    Grid.Row="0" 
                    Grid.Column="0" 
-                   HorizontalOptions="Center" />
+                   HorizontalOptions="Center"/>
             <Label Text="Nombre" FontAttributes="Bold" 
                    Grid.Row="0" 
                    Grid.Column="1" 
-                   HorizontalOptions="Center" />
+                   HorizontalOptions="Center"/>
             <Label Text="Apellido" FontAttributes="Bold" 
                    Grid.Row="0" 
                    Grid.Column="2" 
-                   HorizontalOptions="Center" />
+                   HorizontalOptions="Center"/>
             <Label Text="Edad" FontAttributes="Bold" 
                    Grid.Row="0" 
                    Grid.Column="3" 
-                   HorizontalOptions="Center" />
+                   HorizontalOptions="Center"/>
         </Grid>
 
         <ListView x:Name="lvEstudiantes" ItemSelected="lvEstudiantes_ItemSelected">
@@ -50,32 +49,31 @@
                         <ViewCell>
                         <Grid Padding="10">
                             <Grid.RowDefinitions>
-                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="Auto"/>
                             </Grid.RowDefinitions>
-
                             <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="*" />
-                                <ColumnDefinition Width="*" />
-                                <ColumnDefinition Width="*" />
-                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="*"/>
                             </Grid.ColumnDefinitions>
 
                             <Label Text="{Binding codigo}" 
                                    Grid.Row="0" 
                                    Grid.Column="0" 
-                                   HorizontalOptions="Center" />
+                                   HorizontalOptions="Center"/>
                             <Label Text="{Binding nombre}" 
                                    Grid.Row="0" 
                                    Grid.Column="1" 
-                                   HorizontalOptions="Center" />
+                                   HorizontalOptions="Center"/>
                             <Label Text="{Binding apellido}" 
                                    Grid.Row="0" 
                                    Grid.Column="2" 
-                                   HorizontalOptions="Center" />
+                                   HorizontalOptions="Center"/>
                             <Label Text="{Binding edad}" 
                                    Grid.Row="0"
                                    Grid.Column="3" 
-                                   HorizontalOptions="Center" />
+                                   HorizontalOptions="Center"/>
                         </Grid>
                     </ViewCell>
                     </DataTemplate>
@@ -84,7 +82,5 @@
         <Button x:Name="btnInsertar"
                 Text="Insertar"
                 Clicked="btnInsertar_Clicked"/>
-        
-
-    </VerticalStackLayout>
+      </VerticalStackLayout>
 </ContentPage>
